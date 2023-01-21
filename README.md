@@ -140,7 +140,8 @@ RTL LOGIC REGISTER(Parallel Input Serial Output (PISO))
 RTL LOGIC REGISTER(Parallel Input Parallel Output (PIPO))
 
 
-![Screenshot (92)](https://user-images.githubusercontent.com/122199968/213880500-917c4805-7bc9-4f65-8968-fbea3a9438c8.png)
+![Screenshot (92)](https://user-images.githubusercontent.com/122199968/213880847-d5e17c76-7137-45a8-bb48-fcfc43144163.png)
+
 
 
 
@@ -162,8 +163,7 @@ TIMING DIGRAM(Parallel Input Serial Output (PISO))
 TIMING DIGRAM(Parallel Input Parallel Output (PIPO))
 
 
-![Screenshot (96)](https://user-images.githubusercontent.com/122199968/213880709-ef86d641-3ac0-4680-b333-93aac26f5a85.png)
-
+![Screenshot (96)](https://user-images.githubusercontent.com/122199968/213880816-e81279e1-3245-4726-92ba-87cee3fbca2a.png)
 
 
 
