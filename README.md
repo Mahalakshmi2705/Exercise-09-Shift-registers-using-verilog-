@@ -1,9 +1,18 @@
 
-# Experiment--09-Implementation-of Shift-registers-using-verilog-
-### AIM: To implement PISO , PIPO,PISO  using verilog and validating their functionality using their functional tables
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
-### THEORY 
+Experiment--09-Implementation-of Shift-registers-using-verilog-
+
+AIM:
+
+To implement PISO , PIPO,PISO  using verilog and validating their functionality using their functional tables
+
+HARDWARE REQUIRED: 
+
+– PC, Cyclone II , USB flasher
+
+SOFTWARE REQUIRED:  Quartus prime
+
+THEORY :
+
 Shift registers are basically of 4 types. These are:
 
 Serial In Serial Out shift register
@@ -40,40 +49,125 @@ The logic circuit given below shows a parallel-in-parallel-out shift register. T
 FIGURE-04
 A Parallel in Parallel out (PIPO) shift register is used as a temporary storage device and like SISO Shift register it acts as a delay element.
 
-### Procedure
-/* write all the steps invloved */
+PROCEDURE:
+
+1.Use quartus software and import required modules. 2.Assign inputs and outputs for shift registers. 3.Assign logic for input to give output at positive edge. 4.Perform opertaions and produce rtl circuit. 5.End the module
+
+PROGRAM (Serial Input Parallel Output (SIPO)):
+
+  Program for  Implementation-of Shift-registers-using-verilog-
+
+  Developed by: MAHALAKSHMI S
+
+  RegisterNumber: 22008601
+
+
+    module SIPO(SI,Clk,PO);
+    input SI,Clk;
+    output[0:7]PO;
+    reg[0:7]temp;
+    always@(posedge Clk)
+    begin
+    temp = {temp[0:6],SI};
+    end
+    assign PO = temp;
+    endmodule
+    
+    
+    
+PROGRAM (Parallel Input Serial Output (PISO))
+
+
+    Program for  Implementation-of Shift-registers-using-verilog-
+    
+    Developed by: MAHALAKSHMI S
+    
+    RegisterNumber: 22008601
+    
+    
+     module PISO(Clk, Parallel_In,load, Serial_Out);
+     input Clk,load;
+     input [3:0]Parallel_In;
+     output reg Serial_Out;
+     reg [3:0]tmp;
+     always @(posedge Clk)
+     begin
+     if(load)
+     tmp<=Parallel_In;
+     else
+     begin
+     Serial_Out<=tmp[3];
+     tmp<={tmp[2:0],1'b0};
+     endmodule
+     
+     
+PROGRAM (Parallel Input Parallel Output (PIPO)
+
+
+      Program for  Implementation-of Shift-registers-using-verilog-
+      Developed by: MAHALAKSHMI S
+      RegisterNumber: 22008601
+      
+      
+    module PIPO(PI,Clk,PO);
+    input Clk;
+    input[3:0]PI;
+    output reg[3:0]PO;
+    always@(posedge Clk)
+    begin
+    PO = PI;
+    end 
+    endmodule
+
+
+OUTPUT:
+
+RLT LOGIC:
+
+RTL LOGIC REGISTER(Serial Input Parallel Output (SIPO))
+
+
+![Screenshot (90)](https://user-images.githubusercontent.com/122199968/213880397-c0d31fd8-181a-4a3f-9a86-6469e28f37c0.png)
+
+
+RTL LOGIC REGISTER(Parallel Input Serial Output (PISO))
+
+
+![Screenshot (91)](https://user-images.githubusercontent.com/122199968/213880444-89bea996-bab8-4dd5-b564-d3da1bb65a9d.png)
 
 
 
-### PROGRAM 
-/*
-Program for  Implementation-of Shift-registers-using-verilog-
-Developed by: 
-RegisterNumber:  
-*/
+RTL LOGIC REGISTER(Parallel Input Parallel Output (PIPO))
+
+
+![Screenshot (92)](https://user-images.githubusercontent.com/122199968/213880500-917c4805-7bc9-4f65-8968-fbea3a9438c8.png)
+
+
+
+TIMING DIGRAMS FOR SHIFT REGISTERS
+
+
+TIMING DIGRAM(Serial Input Parallel Output (SIPO))
+
+
+![Screenshot (93)](https://user-images.githubusercontent.com/122199968/213880561-26ac0b34-4fc9-43bc-bcdf-a36107facf51.png)
+
+
+TIMING DIGRAM(Parallel Input Serial Output (PISO))
+
+
+![Screenshot (94)](https://user-images.githubusercontent.com/122199968/213880598-04994991-eeea-47ca-85b9-8cb46d684934.png)
+
+
+TIMING DIGRAM(Parallel Input Parallel Output (PIPO))
+
+
+![Screenshot (96)](https://user-images.githubusercontent.com/122199968/213880709-ef86d641-3ac0-4680-b333-93aac26f5a85.png)
 
 
 
 
 
+RESULTS:
 
-### RTL LOGIC  REGISTERS   
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR SHIFT REGISTERS
-
-
-
-
-
-
-
-
-### RESULTS 
+Thus, PISO , PIPO, SIPO are implemented using verilog and their functionality using their functional tables is validated.
